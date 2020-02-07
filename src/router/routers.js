@@ -55,7 +55,7 @@ export default [
     meta: {
       notCache: true,
       hideInBread: true,
-      hideInMenu: false
+      hideInMenu: true
     },
     children: [
       {
@@ -79,6 +79,25 @@ export default [
       hideInMenu: false
     },
     children: [
+      {
+        path: 'userManager',
+        name: '用户管理',
+        meta: {
+          icon: 'md-person',
+          title: '用户管理'
+        },
+        component: () => import('@/view/module/system/userManager')
+      },
+      {
+        path: 'user',
+        name: '用户1管理',
+        meta: {
+          icon: 'md-person',
+          title: '用户1管理',
+          hideInMenu: true
+        },
+        component: () => import('@/view/module/system/user')
+      },
       {
         path: 'role',
         name: '权限设置',

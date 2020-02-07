@@ -70,7 +70,7 @@ export const updateCurrentUserInfo = ({ nickName, userDesc, avatar }) => {
  */
 export const getUsers = (params) => {
   return request({
-    url: 'base/user',
+    url: 'api/user/userPage',
     params,
     method: 'get'
   })
