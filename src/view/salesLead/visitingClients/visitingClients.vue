@@ -1,5 +1,8 @@
 <template>
-  <div id="visiting_clients">拜访客户</div>
+  <div id="visiting_clients">拜访客户
+
+    <button @click="todeil">详情</button>
+  </div>
 </template>
 
 <script>
@@ -8,7 +11,11 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    todeil(){
+      this.$router.push('/salesLead/visitingClientsDetail')
+    }
+  }
 };
 </script>
 

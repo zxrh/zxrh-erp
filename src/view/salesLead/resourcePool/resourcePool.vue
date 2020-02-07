@@ -1,10 +1,10 @@
 <template>
-  <div id="customer_manage">客户管理</div>
+  <div id="resource_pool">资源池</div>
 </template>
 
 <script>
 export default {
-  name: "customerManage",
+  name: "resourcePool",
   data() {
     return {};
   },
@@ -13,6 +13,6 @@ export default {
 </script>
 
 <style lang="less">
-#customer_manage {
+#resource_pool {
 }
 </style>

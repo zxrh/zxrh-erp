@@ -1,10 +1,10 @@
 <template>
-  <div id="visiting_clients">拜访客户详情</div>
+  <div id="visiting_clientsdel">拜访客户详情</div>
 </template>
 
 <script>
 export default {
-  name: "visitingClients",
+  name: "visitingClientsDel",
   data() {
     return {};
   },
@@ -13,6 +13,6 @@ export default {
 </script>
 
 <style lang="less">
-#visiting_clients {
+#visiting_clientsdel {
 }
 </style>

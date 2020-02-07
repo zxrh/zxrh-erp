@@ -160,5 +160,70 @@ export default [
       hideInMenu: true
     },
     component: () => import('@/view/error-page/500.vue')
+  },
+  {
+    path: '/salesLead',
+    name: '销售线索',
+    meta: {
+      hideInMenu: false,
+      title: '销售线索'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'potentialClients',
+        name: '意向客户',
+        meta: {
+          icon: 'ios-bug',
+          title: '意向客户'
+        },
+        component: () => import('@/view/salesLead/potentialClients/potentialClients.vue'),
+      },
+      {
+        path: 'placeOrder',
+        name: '下订单',
+        meta: {
+          hideInMenu: true,
+          title: '下订单'
+        },
+        component: () => import('@/view/salesLead/potentialClients/placeOrder.vue')
+      },
+      {
+        path: 'resourcePool',
+        name: '资源池',
+        meta: {
+          icon: 'ios-bug',
+          title: '资源池'
+        },
+        component: () => import('@/view/salesLead/resourcePool/resourcePool.vue')
+      },
+      {
+        path: 'highSeas',
+        name: 'highSeas',
+        meta: {
+          icon: 'ios-bug',
+          title: '公海'
+        },
+        component: () => import('@/view/salesLead/highSeas/highSeas.vue')
+      },
+      {
+        path: 'visitingClients',
+        name: 'visitingClients',
+        meta: {
+          icon: 'ios-bug',
+          title: '拜访'
+        },
+        component: () => import('@/view/salesLead/visitingClients/visitingClients.vue')
+      },
+      {
+        path: 'visitingClientsDetail',
+        name: '拜访详情',
+        meta: {
+          hideInMenu: true,
+          title: '拜访详情'
+        },
+        component: () => import('@/view/salesLead/visitingClients/visitingClientsDetail.vue')
+      }
+    ]
   }
 ]
