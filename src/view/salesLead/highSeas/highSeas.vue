@@ -1,6 +1,8 @@
 <template>
   <div id="high_seas">
-    <!-- 搜索 -->
+    
+            <Card>
+<!-- 搜索 -->
     <div class="search_box">
       <div class="search_input">
         <span>关键字</span>
@@ -42,7 +44,11 @@
         </TabPane>
     </Tabs>
     <!-- 分页 -->
-    <Page :current="pagingData.current" :total="pagingData.total" size="small" show-total show-elevator show-sizer @on-change="changePage" @on-page-size-change="changePageNum"/>
+    <Page :current="pagingData.current" :total="pagingData.total"  show-total show-elevator show-sizer @on-change="changePage" @on-page-size-change="changePageNum"/>
+
+    </Card>
+ 
+  
   </div>
 </template>
 
@@ -228,7 +234,7 @@ export default {
       align-items: center;
       margin-right:40px;
       span {
-        flex: 0 0 40px;
+        flex: 0 0 50px;
         margin-right: 10px;
       }
     }
@@ -236,7 +242,7 @@ export default {
       display: flex;
       align-items: center;
       span {
-        flex: 0 0 30px;
+        flex: 0 0 35px;
         margin-right: 10px;
       }
     }
@@ -253,6 +259,7 @@ export default {
   .sizer_time {
     display: flex;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div id="visiting_clients">
-    <!-- 搜索 -->
+    
+            <Card>
+<!-- 搜索 -->
     <div class="search_box">
       <div class="search_input">
         <span>关键字</span>
@@ -38,13 +40,14 @@
     <Page
       :current="pagingData.current"
       :total="pagingData.total"
-      size="small"
       show-total
       show-elevator
       show-sizer
       @on-change="changePage"
       @on-page-size-change="changePageNum"
     />
+            </Card>
+ 
 
     <!-- 弹窗 -->
     <Modal :mask-closable="false" v-model="DialogDistribution" title="新建拜访记录"  @on-cancel="cancel" style="text-align:center;">
@@ -187,7 +190,7 @@ export default {
       align-items: center;
       span {
         
-        flex: 0 0 40px;
+        flex: 0 0 50px;
         margin-right: 10px;
       }
     }
@@ -202,6 +205,7 @@ export default {
     display: flex;
     padding-right:80px;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
   // 拜访列表
   .visit_list{

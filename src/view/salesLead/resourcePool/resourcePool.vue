@@ -1,6 +1,8 @@
 <template>
   <div id="resource_pool">
-    <!-- 搜索 -->
+    
+    <Card>
+                <!-- 搜索 -->
     <div class="search_box">
       <div class="search_input">
         <span>关键字</span>
@@ -116,13 +118,13 @@
     <Page
       :current="pagingData.current"
       :total="pagingData.total"
-      size="small"
       show-total
       show-elevator
       show-sizer
       @on-change="changePage"
       @on-page-size-change="changePageNum"
     />
+            </Card>
 
     <!-- 分配弹窗 -->
     <Modal :mask-closable="false" v-model="DialogDistribution" title="分配"  @on-cancel="cancel">
@@ -806,25 +808,25 @@ export default {
     .search_input {
       display: flex;
       align-items: center;
-      margin-right: 40px;
+      margin-right: 20px;
       span {
-        flex: 0 0 40px;
+        flex: 0 0 50px;
         margin-right: 10px;
       }
     }
     .select_box {
       display: flex;
       align-items: center;
-      margin-right: 30px;
+      margin-right: 20px;
       &:last-child {
         margin-right: 0 !important ;
       }
       .enterprise {
-        flex: 0 0 50px;
+        flex: 0 0 65px;
         margin-right: 10px;
       }
       .customer {
-        flex: 0 0 50px;
+        flex: 0 0 65px;
         margin-right: 10px;
       }
       .department {
@@ -833,19 +835,19 @@ export default {
       }
     }
     .search_btn {
-      margin-right: 20px;
+      margin-right:10px;
     }
     .add_btn {
-      margin-right: 20px;
+      margin-right: 10px;
     }
     .dow_btn {
-      margin-right: 20px;
+      margin-right: 10px;
     }
     .import_btn {
-      margin-right: 20px;
+      margin-right: 10px;
     }
     .distribution_btn {
-      margin-right: 20px;
+      margin-right: 10px;
     }
     .return_btn {
     }
@@ -854,7 +856,7 @@ export default {
   .sizer_time {
     display: flex;
     margin-top: 20px;
-    
+    margin-bottom: 20px;
     
   }
   

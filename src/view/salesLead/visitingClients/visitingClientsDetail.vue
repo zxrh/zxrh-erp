@@ -1,6 +1,8 @@
 <template>
   <div id="visiting_clientsdel">
-    <div class="detail_title">拜访详情-凯蓝科技</div>
+    
+    <Card>
+      <div class="detail_title">拜访详情-凯蓝科技</div>
     <div class="datail_content">
       <!-- 客户类型 -->
       <div class="customer_type">
@@ -183,6 +185,7 @@
         <Button type="primary">提交</Button>
       </div>
     </div>
+      </Card>
   </div>
 </template>
 
