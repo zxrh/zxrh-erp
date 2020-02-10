@@ -89,11 +89,38 @@ export default [
         component: () => import('@/view/module/system/userManager')
       },
       {
+        path: 'menuManager',
+        name: '菜单管理',
+        meta: {
+          icon: 'navicon',
+          title: '菜单管理'
+        },
+        component: () => import('@/view/module/system/menuManager')
+      },
+      {
+        path: 'groupManager',
+        name: '角色权限管理',
+        meta: {
+          icon: 'md-people',
+          title: '角色权限管理'
+        },
+        component: () => import('@/view/module/system/groupManager')
+      },
+      {
+        path: 'groupTypeManager',
+        name: '角色类型管理',
+        meta: {
+          icon: 'ios-people',
+          title: '角色类型管理'
+        },
+        component: () => import('@/view/module/system/groupTypeManager')
+      },
+      {
         path: 'user',
-        name: '用户1管理',
+        name: '用户设置',
         meta: {
           icon: 'md-person',
-          title: '用户1管理',
+          title: '用户设置',
           hideInMenu: true
         },
         component: () => import('@/view/module/system/user')

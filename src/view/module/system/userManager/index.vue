@@ -10,18 +10,12 @@
         </FormItem>
         <FormItem>
           <Button type="primary" @click="handleSearch(1)">查询</Button>&nbsp;
-          <Button @click="handleResetForm('searchForm')">重置</Button>
-        </FormItem>
-      </Form>
-
-      <div class="search-con search-con-top">
-        <ButtonGroup>
           <Button  type="primary"
-                  @click="handleModal()">
+                   @click="handleModal()">
             <span>添加</span>
           </Button>
-        </ButtonGroup>
-      </div>
+        </FormItem>
+      </Form>
 
       <Table border :columns="columns" :data="data" :loading="loading">
         <template slot="action" slot-scope="{ row }">
@@ -185,7 +179,8 @@
         },
         columns: [
           {
-            type: 'selection',
+            type: 'index',
+            title: '序号',
             width: 60,
           },
           {
