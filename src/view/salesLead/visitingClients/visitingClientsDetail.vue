@@ -216,7 +216,8 @@ export default {
           title: "资格认定表",
           key: "address"
         }
-      ]
+      ],
+      data: []
     };
   },
   created() {
@@ -238,12 +239,12 @@ export default {
   }
   .datail_content {
     // 客户类型
-    .customer_type{
-       margin-bottom: 10px;
+    .customer_type {
+      margin-bottom: 10px;
     }
     // 企业基本信息
     .enterprise {
-       margin-bottom: 10px;
+      margin-bottom: 10px;
       .basic_info_title {
         font-size: 18px;
       }
@@ -293,7 +294,7 @@ export default {
     }
     // 个人基本信息
     .personal {
-       margin-bottom: 10px;
+      margin-bottom: 10px;
       .basic_info_title {
         font-size: 18px;
       }
@@ -311,14 +312,14 @@ export default {
 
     // 监察记录
     .monitoring_record {
-       margin-bottom: 10px;
+      margin-bottom: 10px;
       .monitoring_record_title {
         font-size: 18px;
       }
     }
     // 调查结果
     .survey_results {
-       margin-bottom: 10px;
+      margin-bottom: 10px;
       .survey_results_title {
         font-size: 18px;
       }
@@ -331,7 +332,7 @@ export default {
     }
     // 备注
     .note {
-       margin-bottom: 10px;
+      margin-bottom: 10px;
       .note_title {
         font-size: 18px;
       }

@@ -7,7 +7,7 @@
         <Input v-model="value" placeholder="企业名称/联系人/电话" />
       </div>
       <Button class="search_btn" type="primary" icon="ios-search">搜索</Button>
-      <Button class="add_btn" type="primary">添加</Button>
+      <Button class="add_btn" type="primary" @click="addDialog">添加</Button>
     </div>
     <!-- 刷选 -->
     <div class="sizer_time">
@@ -19,21 +19,48 @@
       <DatePicker
         type="daterange"
         placement="bottom-end"
-        placeholder="Select date"
+        placeholder="按时间搜索"
         style="width: 200px"
         @on-change="searchTime"
       ></DatePicker>
     </div>
     <!-- 列表 -->
     <div class="visit_list">
-      <div>拜访列表</div>
-      <Table border ref="selection" :columns="columns" :data="data">
+      <div class="visit_list_title">拜访列表</div>
+      <Table ref="selection" :columns="columns" :data="data">
         <template slot-scope="{ row, index }" slot="action">
             <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">取消拜访</Button>
             <Button type="error" size="small" @click="todeil(index)">查看</Button>
         </template>
       </Table>
     </div>
+    <!-- 分页 -->
+    <Page
+      :current="pagingData.current"
+      :total="pagingData.total"
+      size="small"
+      show-total
+      show-elevator
+      show-sizer
+      @on-change="changePage"
+      @on-page-size-change="changePageNum"
+    />
+
+    <!-- 弹窗 -->
+    <Modal :mask-closable="false" v-model="DialogDistribution" title="新建拜访记录"  @on-cancel="cancel" style="text-align:center;">
+      <div class="distribution_box" style="display:flex;align-items: center;justify-content:center;">
+        <span style="flex:0 0 60px">提交类型</span>
+        <Select v-model="DialogSlect" style="width:200px">
+          <Option value="拜访">拜访</Option>
+          <Option value="拜访">陌拜</Option>
+          <Option value="拜访">来访</Option>
+        </Select>
+        
+      </div>
+      <div slot="footer" style="text-align:center;">
+        <Button type="primary" size="large"   @click="submitBtn">确定</Button>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -95,7 +122,13 @@ export default {
             time: '2016-10-03',
             pop:'监护人'
         },
-      ]
+      ],
+      pagingData:{
+        current:1,// 分页数
+        total:40, // 总页数
+      },
+      DialogDistribution:false, // 添加弹窗状态
+      DialogSlect:''  // 添加弹窗类型选择
     };
   },
   methods: {
@@ -116,6 +149,30 @@ export default {
     todeil(id) {
       this.$router.push("/salesLead/visitingClientsDetail?id="+id);
     },
+    /**
+     * 弹框部分
+     */
+    addDialog(){
+      this.DialogDistribution=true
+    },
+    cancel() {
+      this.$Message.info("关闭");
+    },
+    // 弹框分配提交按钮
+    submitBtn(){
+      this.DialogDistribution=false
+      this.$Message.info("成功");
+    },
+    
+    // 分页
+    changePage(page) {
+      this.pagingData.current = page;
+      console.log(this.current);
+    },
+    // 更改每页条数
+    changePageNum(pages) {
+      console.log(pages);
+    }
   }
 };
 </script>
@@ -129,12 +186,13 @@ export default {
       display: flex;
       align-items: center;
       span {
+        
         flex: 0 0 40px;
         margin-right: 10px;
       }
     }
     .search_btn {
-      margin: 0 10px;
+      margin: 0 40px;
     }
     .add_btn {
     }
@@ -142,11 +200,15 @@ export default {
   // 筛选
   .sizer_time {
     display: flex;
+    padding-right:80px;
     margin-top: 20px;
   }
   // 拜访列表
   .visit_list{
     margin-top:20px;
+    .visit_list_title{
+      font-size:16px;
+    }
   }
 }
 </style>
