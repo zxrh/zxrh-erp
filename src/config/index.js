@@ -32,7 +32,7 @@ module.exports = {
    */
   apiUrl: {
     //  本地环境接口请求地址
-    dev: 'http://gseb74.natappfree.cc',
+    dev: 'http://w4tbhi.natappfree.cc',
     //  生产环境接口请求地址
     pro: 'http://api.openc.top'
   },

@@ -227,7 +227,7 @@ export default [
           icon: 'ios-bug',
           title: '意向客户'
         },
-        component: () => import('@/view/salesLead/potentialClients/potentialClients.vue'),
+        component: () => import('@/view/module/salesLead/potentialClients/index.vue'),
       },
       {
         path: 'placeOrder',
@@ -236,7 +236,7 @@ export default [
           hideInMenu: true,
           title: '下订单'
         },
-        component: () => import('@/view/salesLead/potentialClients/placeOrder.vue')
+        component: () => import('@/view/module/salesLead/potentialClients/placeOrder.vue')
       },
       {
         path: 'resourcePool',
@@ -245,7 +245,7 @@ export default [
           icon: 'ios-bug',
           title: '资源池'
         },
-        component: () => import('@/view/salesLead/resourcePool/resourcePool.vue')
+        component: () => import('@/view/module/salesLead/resourcePool/index.vue')
       },
       {
         path: 'highSeas',
@@ -263,7 +263,7 @@ export default [
           icon: 'ios-bug',
           title: '拜访'
         },
-        component: () => import('@/view/salesLead/visitingClients/visitingClients.vue')
+        component: () => import('@/view/module/salesLead/visitingClients/index.vue')
       },
       {
         path: 'visitingClientsDetail',
@@ -272,7 +272,7 @@ export default [
           hideInMenu: true,
           title: '拜访详情'
         },
-        component: () => import('@/view/salesLead/visitingClients/visitingClientsDetail.vue')
+        component: () => import('@/view/module/salesLead/visitingClients/visitingClientsDetail.vue')
       }
     ]
   }
