@@ -26,6 +26,7 @@ const router = new Router({
   routes: routes,
   mode: 'history'
 })
+
 const LOGIN_PAGE_NAME = 'login'
 
 const permitList = [LOGIN_PAGE_NAME, 'loginSuccess']

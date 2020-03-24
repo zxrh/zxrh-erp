@@ -22,7 +22,7 @@
         type="daterange"
         placement="bottom-end"
         placeholder="按时间搜索"
-        style="width: 200px"
+        style="width: 200px;margin-left:60px"
         @on-change="searchTime"
       ></DatePicker>
     </div>
